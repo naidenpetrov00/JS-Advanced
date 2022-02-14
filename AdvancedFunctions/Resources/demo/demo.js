@@ -13,3 +13,24 @@ function sum3curry(a) {
 const op = sum3curry(3)(5);
 console.log(op);
 console.log(sum3curry(9)(9)(9));
+
+const f = (() => {
+    let counter = 0;
+    return () => {
+        console.log(++counter);
+    };
+})();
+
+f();
+f();
+
+let person = {
+    name: 'Peter',
+    sayHi: function () {
+        console.log(`${this.name} says hi!`);
+    }
+}
+
+secondPerson
+
+person.sayHi();

@@ -1,7 +1,4 @@
 function getManipulator() {
-
-
-
     let string = ''
 
     function append(str) {
