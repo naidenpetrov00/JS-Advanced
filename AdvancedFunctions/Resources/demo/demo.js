@@ -23,14 +23,3 @@ const f = (() => {
 
 f();
 f();
-
-let person = {
-    name: 'Peter',
-    sayHi: function () {
-        console.log(`${this.name} says hi!`);
-    }
-}
-
-secondPerson
-
-person.sayHi();
