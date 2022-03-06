@@ -1,15 +1,16 @@
 const SELECTORS = {
     email: '[name=email]',
     rows: '#customers tbody tr',
+    emailCell: '.email-cell',
 };
 
 const getEmail = () => document.querySelector(SELECTORS.email).value;
 
 const getRows = () => document.querySelector(SELECTORS.rows)
 
-const getRowToDelete = (rows, email) => {
-    
-};
+const getRowToDelete = (rows, email) =>
+    [...rows].find(row =>
+        email == row.querySelector(SELECTORS.emailCell).innerHTML);
 
 const deleteRow = (row) => row.remove();
 
