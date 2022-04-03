@@ -4,6 +4,12 @@ const suitChars = {
     Diamonds: '\u2666',
     CLubs: '\u2665',
 };
+const faceID = {
+    Spades: 'S',
+    Hearts: 'H',
+    Diamonds: 'D',
+    CLubs: 'C',
+}
 
 class Card {
     constructor(face, suit) {
@@ -15,14 +21,14 @@ class Card {
         let suitChar = '';
 
         switch (this.suit) {
-            case 'S':
+            case faceID.Spades:
                 suitChar = suitChars.Spades;
                 break;
-            case 'H':
+            case faceID.Hearts:
                 suitChar = suitChars.Hearts;
-            case 'D':
+            case faceID.Diamonds:
                 suitChar = suitChars.Diamonds;
-            case 'C':
+            case faceID.CLubs:
                 suitChar = suitChars.CLubs;
             default:
                 break;
@@ -35,7 +41,10 @@ class Card {
 function playingCards(face, suit) {
     const valid = {
         faces: ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'],
-        suits: ['S', 'H', 'D', 'C'],
+        suits: [faceID.Spades,
+        faceID.Hearts,
+        faceID.Diamonds,
+        faceID.CLubs],
     };
 
     if (!valid.faces.includes(face)) {
