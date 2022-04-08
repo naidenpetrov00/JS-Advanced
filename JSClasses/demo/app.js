@@ -14,4 +14,4 @@ Test.prototype.outsideFunction = function () {
 }
 
 test.outsideFunction();
-test2.outsideFunction();
+test2.outsideFunction();3
