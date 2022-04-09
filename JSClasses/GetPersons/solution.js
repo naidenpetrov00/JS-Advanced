@@ -1,3 +1,5 @@
-let Person = require('./solution.js');
+const Person = require('../Person/solution.js');
 
-Person
+const person = new Person('Naiden', 'Petrov', 21, 'email');
+
+console.log(person.toString());
