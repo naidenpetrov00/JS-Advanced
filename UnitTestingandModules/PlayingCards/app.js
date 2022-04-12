@@ -2,7 +2,7 @@ const suitChars = {
     Spades: '\u2660',
     Hearts: '\u2663',
     Diamonds: '\u2666',
-    CLubs: '\u2665',
+    Clubs: '\u2665',
 };
 const faceID = {
     Spades: 'S',
