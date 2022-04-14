@@ -21,4 +21,12 @@ describe('String Builder', function () {
         stringBuilder.append(inputs.Hello);
         expect(stringBuilder._stringArray).to.have.length.above(0);
     })
+
+    describe('prepend', function () {
+        it('should convert string to array', function () {
+            stringBuilder.prepend(inputs.Hello);
+
+            expect(stringBuilder._stringArray).to.be.
+        })
+    })
 });
