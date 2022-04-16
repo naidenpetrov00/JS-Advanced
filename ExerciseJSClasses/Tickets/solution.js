@@ -4,21 +4,6 @@ class Ticket {
         this.price = price;
         this.status = status;
     }
-
-    overview() {
-        const ticketOverview = {
-            destination: this.destination,
-            price: this.price,
-            status: this.status,
-        }
-
-        return (ticketOverview);
-    }
-
-    toString() {
-        const output = `Ticket ${JSON.stringify(this.overview())}`;
-        return output;
-    }
 };
 
 function ticketCreate(ticketDescription, sortingCriterion) {
@@ -45,19 +30,43 @@ function ticketCreate(ticketDescription, sortingCriterion) {
         status = description[2];
 
         const ticket = new Ticket(destination, price, status);
-
-        tickets.push(ticket.overview());
+        tickets.push(ticket);
     }
-    
+
     switch (sortingCriterion) {
         case inputs.sortingCriterion.destination:
-            tickets.sort((a, b) => a.destination - b.destination)
+            tickets.sort((a, b) => {
+                aData = a.destination.toLowerCase();
+                bData = b.destination.toLowerCase();
+
+                if (aData > bData) {
+                    return 1;
+                } else if (aData < bData) {
+                    return -1;
+                }
+
+                return 0;
+            });
             break;
+
         case inputs.sortingCriterion.price:
             tickets.sort((a, b) => a.price - b.price)
             break;
+
         case inputs.sortingCriterion.status:
-            tickets.sort((a, b) => a.status - b.status)
+            tickets.sort((a, b) => {
+                aData = a.status.toLowerCase();
+                bData = b.status.toLowerCase();
+
+                if (aData > bData) {
+                    return 1;
+                } else if (aData < bData) {
+                    return -1;
+                }
+
+                return 0;
+            });
+
         default:
             break;
     }
@@ -66,7 +75,7 @@ function ticketCreate(ticketDescription, sortingCriterion) {
         let output = [];
 
         tickets.forEach((ticket) => {
-            output.push(JSON.stringify(ticket));
+            output.push(ticket);
         })
 
         return output;
